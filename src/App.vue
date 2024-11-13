@@ -30,13 +30,27 @@ const fn = () => {
 </script>
 
 <template>
-  <button @click="fn">btn</button>
+  <!-- <button @click="fn">btn</button>
   <div>{{ loading ? 'loading~' : 'end' }}</div>
-  <div v-for="item in data?.records" :key="item.id">{{ item.name }}</div>
+  <div v-for="item in data?.records" :key="item.id">{{ item.name }}</div> -->
+  <nav class="nav">
+    <router-link to="/button">button</router-link>
+    <router-link to="/dialog">dialog</router-link>
+  </nav>
+  <div class="displayarea">
+    <RouterView />
+  </div>
 </template>
 
-<style scoped>
-.read-the-docs {
-  color: #888;
+<style scoped lang="scss">
+.nav {
+  display: flex;
+  gap: 10px;
+  line-height: 30px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.active {
+  border-bottom: 3px solid hsla(160, 100%, 37%, 1);
 }
 </style>

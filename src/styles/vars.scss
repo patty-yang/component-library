@@ -1,0 +1,31 @@
+@use 'sass:color';
+// 全局变量的样式
+$colors: (
+ primary: #007bff,
+ success: #28a745,
+ warning: #ff9900,
+ danger: #dc3545,
+ disabled: #6c757d,
+);
+
+// 辅助函数：将颜色转换为 HEX 格式
+// @function to-hex($color) {
+//     @return '#' + str-slice(#{red($color)}, 1, 2) + str-slice(#{green($color)}, 1, 2) + str-slice(#{blue($color)}, 1, 2);
+// }
+
+:root {
+  //   根据主题色来生成不同亮度的颜色
+  @each $key, $color in $colors {
+    // 生成主题颜色
+    --color-#{$key}: #{$color};
+    // 生成不同亮度的颜色
+    @for $i from 1 through 4 {
+      $light-color: color.mix(#fff, $color, (2 * $i + 1) * 10 * 1%);
+      --color-#{$key}-light-#{2 * $i + 1}: #{$light-color};
+    }
+  }
+  // 中性色
+  --color-white: #fff;
+  --color-black: #000;
+  --bg-color: #ffffff;
+}
