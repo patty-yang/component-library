@@ -16,3 +16,24 @@ export interface IRequestResult<T> {
   data?: T
   error?: any
 }
+
+export type RequestOptions<T> = {
+  manual?: boolean
+  defaultParams?: T
+  onSuccess?: (data: any, params?: T) => void
+  onError?: (error: any, params?: T) => void
+  onBefore?: (params?: T) => void
+  onFinally?: () => void
+  formatResult?: (data: any) => any
+  refreshDeps?: any[]
+  pollingInterval?: number
+  debounceWait?: number
+  throttleWait?: number
+  retryCount?: number
+}
+
+export type ResultOptions<T> = {
+  loading: boolean
+  data: T | undefined
+  error: any
+}
