@@ -1,0 +1,132 @@
+// css 变量
+.c-button {
+    --button-font-weight: var(--font-weight-primary);
+    --button-border-color: var(--border-color);
+    --button-bg-color: var(--fill-color-blank);
+    --button-text-color: var(--text-color-regular);
+    --button-disabled-text-color: var(--disabled-text-color);
+    --button-disabled-bg-color: var(--fill-color-blank);
+    --button-disabled-border-color: var(--border-color-light);
+    --button-hover-text-color: var(--color-primary);
+    --button-hover-bg-color: var(--color-primary-light-9);
+    --button-hover-border-color: var(--color-primary-light-7);
+    --button-active-text-color: var(--button-hover-text-color);
+    --button-active-border-color: var(--color-primary);
+    --button-active-bg-color: var(--button-hover-bg-color);
+    --button-outline-color: var(--color-primary-light-5);
+    --button-active-color: var(--text-color-primary);
+ }
+
+ .c-button {
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    height: 40px;
+    background-color: var(--button-bg-color);
+    border: var(--border);
+    border-color: var(--button-border-color);
+    color: var(--button-text-color);
+    appearance: none;
+    text-align: center;
+    box-sizing: border-box;
+    outline: none;
+    margin: 0;
+    transition: 0.1s;
+    font-weight: var(--button-font-weight);
+    user-select: none;
+    vertical-align: middle;
+    padding: 12px 20px;
+    font-size: var(--font-size-base);
+    border-radius: var(--border-radius-base);
+    &:hover,
+    &:focus {
+      color: var(--button-hover-text-color);
+      border-color: var(--button-hover-border-color);
+      background-color: var(--button-hover-bg-color);
+      outline: none;
+    }
+    &:active {
+      color: var(--button-active-text-color);
+      border-color: var(--button-active-border-color);
+      background-color: var(--button-active-bg-color);
+      outline: none;
+    }
+    &.is-round {
+      border-radius: var(--border-radius-round);
+    }
+    &.is-circle {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      padding: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    // 禁用相关的样式
+    &.is-disabled,
+    &.is-disabled:hover,
+    &.is-disabled:focus,
+    &[disabled],
+    &[disabled]:hover,
+    &[disabled]:focus {
+      color: var(--button-disabled-text-color);
+      cursor: not-allowed;
+      background-image: none;
+      background-color: var(--button-disabled-bg-color);
+      border-color: var(--button-disabled-border-color);
+    }
+    [class*='c-icon'] + span {
+      margin-left: 6px;
+      position: relative;
+      bottom: 2px;
+    }
+  }
+
+  @each $type in primary, success, warning, danger, info {
+    .c-button--#{$type} {
+      --button-text-color: var(--color-white);
+      --button-bg-color: var(--color-#{$type});
+      --button-border-color: var(--color-#{$type});
+      --button-outline-color: var(--color-#{$type}-light-5);
+      --button-active-color: var(--color-#{$type}-dark-2);
+      --button-hover-text-color: var(--color-white);
+      --button-hover-bg-color: var(--color-#{$type}-light-3);
+      --button-hover-border-color: var(--color-#{$type}-light-3);
+      --button-active-bg-color: var(--color-#{$type}-dark-2);
+      --button-active-border-color: var(--color-#{$type}-dark-2);
+      --button-disabled-text-color: var(--color-white);
+      --button-disabled-bg-color: var(--color-#{$type}-light-5);
+      --button-disabled-border-color: var(--color-#{$type}-light-5);
+    }
+
+    .c-button--#{$type}.is-plain {
+      --button-text-color: var(--color-#{$type});
+      --button-bg-color: var(--color-#{$type}-light-9);
+      --button-border-color: var(--color-#{$type}-light-5);
+      --button-hover-text-color: var(--color-white);
+      --button-hover-bg-color: var(--color-#{$type});
+      --button-hover-border-color: var(--color-#{$type});
+      --button-active-text-color: var(--color-white);
+    }
+
+    .c-button--#{$type}.is-disabled {
+      --button-disabled-text-color: var(--color-#{$type});
+    }
+  }
+
+  .c-button--large {
+    --button-size: 50px;
+    height: var(--button-size);
+    padding: 12px 19px;
+    font-size: var(--font-size-base);
+    border-radius: var(--border-radius-base);
+  }
+  .c-button--small {
+    --button-size: 24px;
+    height: var(--button-size);
+    padding: 5px 11px;
+    font-size: 12px;
+    border-radius: calc(var(--border-radius-base) - 1px);
+  }

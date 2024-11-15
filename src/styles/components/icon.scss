@@ -1,0 +1,16 @@
+.c-icon {
+    --icon-color: inherit;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--icon-color);
+    position: relative;
+    fill: currentColor;
+    font-size: inherit ;
+}
+
+@each $key, $color in primary, success, warning, danger, info {
+    .c-icon-#{$key} {
+        --icon-color: var(--color-#{$key});
+    }
+}

@@ -5,18 +5,22 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: '/button',
+      redirect: '/button'
+    },
+    {
+      path: '/icon',
+      component: () => import('@/views/Icon.vue')
     },
     {
       path: '/button',
-      component: () => import('../components/Button/index.vue'),
+      component: () => import('@/views/Button.vue')
     },
     {
       path: '/dialog',
-      component: () => import('@/components/Dialog/index.vue'),
-    },
+      component: () => import('@/components/Dialog/index.vue')
+    }
   ],
-  linkActiveClass: 'active',
+  linkActiveClass: 'active'
 })
 
 export default router

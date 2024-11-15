@@ -1,11 +1,11 @@
 @use 'sass:color';
 // 全局变量的样式
 $colors: (
- primary: #007bff,
- success: #28a745,
- warning: #ff9900,
- danger: #dc3545,
- disabled: #6c757d,
+ primary: #409EFF,
+ success: #67C23A,
+ warning: #E6A23C,
+ danger: #F56C6C,
+ info: #909399
 );
 
 // 辅助函数：将颜色转换为 HEX 格式
@@ -14,18 +14,74 @@ $colors: (
 // }
 
 :root {
-  //   根据主题色来生成不同亮度的颜色
+  // 根据主题色来生成不同亮度的颜色
   @each $key, $color in $colors {
-    // 生成主题颜色
     --color-#{$key}: #{$color};
     // 生成不同亮度的颜色
     @for $i from 1 through 4 {
       $light-color: color.mix(#fff, $color, (2 * $i + 1) * 10 * 1%);
       --color-#{$key}-light-#{2 * $i + 1}: #{$light-color};
     }
+    // dark2 linght8 颜色不同，单独生成
+    --color-#{$key}-light-8: #{color.mix(#fff, $color, 80 * 1%)}; // 80% 亮度
+    --color-#{$key}-dark-2: #{color.mix(
+        #000,
+        $color,
+        20 * 1%
+      )};
   }
-  // 中性色
+  // element-ui 中性色
   --color-white: #fff;
   --color-black: #000;
   --bg-color: #ffffff;
+  --bg-color-page: #f2f3f5;
+  --bg-color-overlay: #ffffff;
+  --text-color-primary: #303133;
+  --text-color-regular: #606266;
+  --text-color-secondary: #909399;
+  --text-color-placeholder: #a8abb2;
+  --text-color-disabled: #c0c4cc;
+  --border-color: #dcdfe6;
+  --border-color-light: #e4e7ed;
+  --border-color-lighter: #ebeef5;
+  --border-color-extra-light: #f2f6fc;
+  --border-color-dark: #d4d7de;
+  --border-color-darker: #cdd0d6;
+  --fill-color: #f0f2f5;
+  --fill-color-light: #f5f7fa;
+  --fill-color-lighter: #fafafa;
+  --fill-color-extra-light: #fafcff;
+  --fill-color-dark: #ebedf0;
+  --fill-color-darker: #e6e8eb;
+  --fill-color-blank: #ffffff;
+
+    // border 相关
+  --border-width: 1px;
+  --border-style: solid;
+  --border-color-hover: var(--text-color-disabled);
+  --border: var(--border-width) var(--border-style) var(--border-color);
+  --border-radius-base: 4px;
+  --border-radius-small: 2px;
+  --border-radius-round: 20px;
+  --border-radius-circle: 100%;
+
+    // font 相关
+  --font-size-extra-large: 20px;
+  --font-size-large: 18px;
+  --font-size-medium: 16px;
+  --font-size-base: 14px;
+  --font-size-small: 13px;
+  --font-size-extra-small: 12px;
+  --font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+      'Microsoft YaHei', '\5fae\8f6f\96c5\9ed1', Arial, sans-serif;
+  --font-weight-primary: 500;
+
+    // disabled 相关
+  --disabled-bg-color: var(--fill-color-light);
+  --disabled-text-color: var(--text-color-placeholder);
+  --disabled-border-color: var(--border-color-light);
+
+    // transition 过渡相关
+  --transition-duration: 0.3s;
+  --transition-duration-fast: 0.2s;
 }

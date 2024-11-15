@@ -1,1 +1,5 @@
 @use './vars.scss' as *;
+@use './reset.scss' as *;
+
+@use './components/icon.scss' as *;
+@use './components/button.scss' as *;
