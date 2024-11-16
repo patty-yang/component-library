@@ -7,8 +7,9 @@ import router from './router'
 import './assets/main.css'
 import './styles/index.scss'
 
-import CButton from './components/Button/index.vue'
-import CIcon from './components/Icon/index.vue'
+import Button from './components/Button/index.vue'
+import Icon from './components/Icon/index.vue'
+import Dialog from './components/Dialog/index.vue'
 /* import the fontawesome core */
 import { library } from '@fortawesome/fontawesome-svg-core'
 /* import font awesome icon component */
@@ -20,7 +21,10 @@ library.add(fas)
 const app = createApp(App)
 // app.use(ElementPlus)
 app.use(router)
-app.component('CButton', CButton)
-app.component('CIcon', CIcon)
+
+app.component('CButton', Button)
+app.component('CIcon', Icon)
+app.component('CDialog', Dialog)
+
 app.component('FontAwesomeIcon', FontAwesomeIcon)
 app.mount('#app')

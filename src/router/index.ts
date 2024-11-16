@@ -17,7 +17,7 @@ const router = createRouter({
     },
     {
       path: '/dialog',
-      component: () => import('@/components/Dialog/index.vue')
+      component: () => import('@/views/Dialog.vue')
     }
   ],
   linkActiveClass: 'active'
