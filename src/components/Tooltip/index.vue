@@ -22,7 +22,7 @@ import type { Instance, Placement } from '@popperjs/core'
 
 import { useTimeout } from '@/hooks'
 
-const { registerTimeout, cancelTimeout } = useTimeout()
+const { registerTimeout } = useTimeout()
 
 interface TooltipProps {
   content: string
@@ -39,10 +39,6 @@ const props = withDefaults(defineProps<TooltipProps>(), {
   openDelay: 0,
   closeDelay: 0
 })
-// 提示框是否需要显示
-// 创建具体的 popper 实例
-// popper 是通过 createPopper 创建的
-// popper 实例是在 isOpen 为 true 的时候创建的
 
 const triggerRef = ref<HTMLElement>()
 const popperRef = ref<HTMLElement>()
@@ -78,6 +74,7 @@ const popperOptions = computed(() => ({
   ]
 }))
 
+// 弹框需要显示是在 isOpen 为 true 的时候，显示的话，需要创建 popper 实例，显示提示框
 watch(
   isOpen,
   (newVal) => {
