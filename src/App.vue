@@ -3,7 +3,8 @@
     <router-link to="/icon">icon</router-link>
     <router-link to="/button">button</router-link>
     <router-link to="/dialog">dialog</router-link>
-    <router-link to="/Collapse">Collapse</router-link>
+    <router-link to="/collapse">collapse</router-link>
+    <router-link to="/tooltip">tooltip</router-link>
   </nav>
   <div class="displayarea">
     <RouterView />

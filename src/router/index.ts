@@ -21,7 +21,11 @@ const router = createRouter({
     },
     {
       path: '/collapse',
-      component: () => import('@/views/collapse.vue')
+      component: () => import('@/views/Collapse.vue')
+    },
+    {
+      path: '/tooltip',
+      component: () => import('@/views/Tooltip.vue')
     }
   ],
   linkActiveClass: 'active'
