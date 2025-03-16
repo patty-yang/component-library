@@ -22,6 +22,9 @@ import type { Instance, Placement } from '@popperjs/core'
 
 import { useTimeout } from '@/hooks'
 
+defineOptions({
+  name: 'CTooltip'
+})
 const { registerTimeout } = useTimeout()
 
 interface TooltipProps {

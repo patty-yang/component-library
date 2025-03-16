@@ -54,12 +54,12 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 
 const openedValue = ref(['a'])
 
-const handleChange = (value) => {
+const handleChange = (value: string[]) => {
   console.log(value)
 }
 </script>
