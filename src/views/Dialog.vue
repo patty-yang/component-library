@@ -2,7 +2,6 @@
   <h1 class="row-title">dialog</h1>
   <div class="row">
     <C-button @click="btnClick">dialog 1</C-button>
-    <C-button>dialog 2</C-button>
   </div>
 
   <CDialog
@@ -15,7 +14,7 @@
 
     <template #footer>
       <C-button @click="closeHandle">取消</C-button>
-      <C-button>确定</C-button>
+      <C-button type="primary">确定</C-button>
     </template>
   </CDialog>
 </template>

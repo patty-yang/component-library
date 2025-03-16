@@ -1,11 +1,11 @@
 @use 'sass:color';
 // 全局变量的样式
 $colors: (
- primary: #409EFF,
- success: #67C23A,
- warning: #E6A23C,
- danger: #F56C6C,
- info: #909399
+  primary: #409eff,
+  success: #67c23a,
+  warning: #e6a23c,
+  danger: #f56c6c,
+  info: #909399
 );
 
 // 辅助函数：将颜色转换为 HEX 格式
@@ -24,11 +24,7 @@ $colors: (
     }
     // dark2 linght8 颜色不同，单独生成
     --color-#{$key}-light-8: #{color.mix(#fff, $color, 80 * 1%)}; // 80% 亮度
-    --color-#{$key}-dark-2: #{color.mix(
-        #000,
-        $color,
-        20 * 1%
-      )};
+    --color-#{$key}-dark-2: #{color.mix(#000, $color, 20 * 1%)};
   }
   // element-ui 中性色
   --color-white: #fff;
@@ -55,7 +51,7 @@ $colors: (
   --fill-color-darker: #e6e8eb;
   --fill-color-blank: #ffffff;
 
-    // border 相关
+  // border 相关
   --border-width: 1px;
   --border-style: solid;
   --border-color-hover: var(--text-color-disabled);
@@ -65,7 +61,7 @@ $colors: (
   --border-radius-round: 20px;
   --border-radius-circle: 100%;
 
-    // font 相关
+  // font 相关
   --font-size-extra-large: 20px;
   --font-size-large: 18px;
   --font-size-medium: 16px;
@@ -73,15 +69,15 @@ $colors: (
   --font-size-small: 13px;
   --font-size-extra-small: 12px;
   --font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
-      'Microsoft YaHei', '\5fae\8f6f\96c5\9ed1', Arial, sans-serif;
+    'Microsoft YaHei', '\5fae\8f6f\96c5\9ed1', Arial, sans-serif;
   --font-weight-primary: 500;
 
-    // disabled 相关
+  // disabled 相关
   --disabled-bg-color: var(--fill-color-light);
   --disabled-text-color: var(--text-color-placeholder);
   --disabled-border-color: var(--border-color-light);
 
-    // transition 过渡相关
+  // transition 过渡相关
   --transition-duration: 0.3s;
   --transition-duration-fast: 0.2s;
 }

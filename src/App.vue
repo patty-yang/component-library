@@ -3,13 +3,14 @@
     <router-link to="/icon">icon</router-link>
     <router-link to="/button">button</router-link>
     <router-link to="/dialog">dialog</router-link>
+    <router-link to="/Collapse">Collapse</router-link>
   </nav>
   <div class="displayarea">
     <RouterView />
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .nav {
   display: flex;
   height: 50px;
@@ -20,6 +21,7 @@
 .displayArea {
   margin-top: 2em;
 }
+
 .active {
   border-bottom: 3px solid hsla(160, 100%, 37%, 1);
 }

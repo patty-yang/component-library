@@ -18,6 +18,10 @@ const router = createRouter({
     {
       path: '/dialog',
       component: () => import('@/views/Dialog.vue')
+    },
+    {
+      path: '/collapse',
+      component: () => import('@/views/collapse.vue')
     }
   ],
   linkActiveClass: 'active'

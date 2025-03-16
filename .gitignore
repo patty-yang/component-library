@@ -3,5 +3,10 @@ node_modules
 *.log
 *.log.* 
 
+.DS_Store
+
+.vscode
+
+.idea
 
 
